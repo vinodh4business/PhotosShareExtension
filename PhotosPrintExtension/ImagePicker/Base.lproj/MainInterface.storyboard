@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,75 +36,14 @@
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="OUe-Zp-qQV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hTH-lz-gmU">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EDq-0i-80g">
-                                    <size key="itemSize" width="87" height="89"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="Bzy-Qc-vIQ" customClass="ImageCollectionViewCell" customModule="ImagePicker" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="87" height="89"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="87" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65K-GL-YLg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="89"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="65K-GL-YLg" firstAttribute="leading" secondItem="Bzy-Qc-vIQ" secondAttribute="leading" id="8WC-Or-zbb"/>
-                                            <constraint firstItem="65K-GL-YLg" firstAttribute="top" secondItem="Bzy-Qc-vIQ" secondAttribute="top" id="ENS-Eh-APd"/>
-                                            <constraint firstAttribute="bottom" secondItem="65K-GL-YLg" secondAttribute="bottom" id="aUM-Mx-s7E"/>
-                                            <constraint firstAttribute="trailing" secondItem="65K-GL-YLg" secondAttribute="trailing" id="g5Q-Wd-cYk"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageView" destination="65K-GL-YLg" id="f2V-ZG-w2C"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fF6-2i-QZe"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hTH-lz-gmU" firstAttribute="leading" secondItem="OUe-Zp-qQV" secondAttribute="leading" id="1dZ-ue-ozM"/>
-                            <constraint firstAttribute="bottom" secondItem="hTH-lz-gmU" secondAttribute="bottom" id="QuM-X2-M2F"/>
-                            <constraint firstAttribute="trailing" secondItem="hTH-lz-gmU" secondAttribute="trailing" id="ZNO-eb-yOp"/>
-                            <constraint firstItem="hTH-lz-gmU" firstAttribute="top" secondItem="OUe-Zp-qQV" secondAttribute="top" id="hqv-MB-jxm"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WyA-cf-tHT">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="asl-1Q-KVB">
-                            <connections>
-                                <action selector="cancelAction:" destination="WaW-Jy-Fjm" id="Yhz-DQ-hOm"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="GF6-Xz-5Hb">
-                            <connections>
-                                <action selector="nextAction:" destination="WaW-Jy-Fjm" id="nNe-X2-UbL"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="imgCollectionView" destination="hTH-lz-gmU" id="9NA-zD-2OQ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="WyA-cf-tHT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Az-hb-OSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="4"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

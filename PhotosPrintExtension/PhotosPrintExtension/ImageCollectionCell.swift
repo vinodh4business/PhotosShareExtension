@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct CellModel {
-	var image: UIImage
-}
-
 struct CellModelData{
     var url:String
 }
@@ -19,13 +15,7 @@ struct CellModelData{
 class ImageCollectionCell: UICollectionViewCell {
 	
 	@IBOutlet weak var imgView: UIImageView!
-	
-	var item: CellModel? {
-		didSet {
-			self.configure(item)
-		}
-	}
-	
+		
     var itemWithURL: CellModelData? {
         didSet {
             self.configureWithURL(itemWithURL)
@@ -49,12 +39,5 @@ class ImageCollectionCell: UICollectionViewCell {
             }
         }
     }
-
-	
-	func configure(_ item: CellModel?) {
-		if let model = item {
-			self.imgView.image = model.image
-		}
-	}
 	
 }
