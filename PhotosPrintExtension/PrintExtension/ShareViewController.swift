@@ -46,6 +46,7 @@ class ShareViewController: UIViewController {
                         
                         if index == (content.attachments?.count)! - 1 {
                             DispatchQueue.main.async {
+                                //this.imgCollectionView.reloadData()
                                 let userDefaults = UserDefaults(suiteName: "group.com.photos.testpush")
                                 userDefaults?.set(this.imagesUrls, forKey: this.sharedKey)
                                 userDefaults?.synchronize()

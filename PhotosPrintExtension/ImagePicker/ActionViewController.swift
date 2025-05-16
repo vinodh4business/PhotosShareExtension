@@ -14,8 +14,8 @@ class ActionViewController: UIViewController {
     
     let sharedKey = "ImageSharePhotoKey"
     
-    var selectedImages: [UIImage] = []
     var imagesUrls: [String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +55,10 @@ class ActionViewController: UIViewController {
                     if error == nil, let url = data as? URL, let this = self {
                         this.imagesUrls.append(url.absoluteString)
                         
+                        
                         if index == (content.attachments?.count)! - 1 {
                             DispatchQueue.main.async {
+                                //this.imgCollectionView.reloadData()
                                 let userDefaults = UserDefaults(suiteName: "group.com.photos.testpush")
                                 userDefaults?.set(this.imagesUrls, forKey: this.sharedKey)
                                 userDefaults?.synchronize()
@@ -64,6 +66,7 @@ class ActionViewController: UIViewController {
                                 this.redirectToHostApp()
                             }
                         }
+                        
                         
                     } else {
                         print("GETTING ERROR")

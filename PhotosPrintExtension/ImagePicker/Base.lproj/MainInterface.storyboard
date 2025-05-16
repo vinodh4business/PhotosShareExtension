@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gqq-Rg-Byb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WaW-Jy-Fjm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -7,39 +7,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="do6-Gm-SDB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gqq-Rg-Byb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dgb-UL-H48">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WaW-Jy-Fjm" kind="relationship" relationship="rootViewController" id="dHd-zq-gvP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c5L-vs-rDr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
-        </scene>
         <!--Action View Controller-->
         <scene sceneID="XSw-V7-vy5">
             <objects>
                 <viewController id="WaW-Jy-Fjm" customClass="ActionViewController" customModule="ImagePicker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7f-Un-Bs8"/>
-                        <viewControllerLayoutGuide type="bottom" id="EV4-mX-rhe"/>
-                    </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="OUe-Zp-qQV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fF6-2i-QZe"/>
+                        <viewLayoutGuide key="safeArea" id="GXn-j2-chh"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WyA-cf-tHT"/>
+                    <navigationItem key="navigationItem" id="WyA-cf-tHT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="asl-1Q-KVB">
+                            <connections>
+                                <action selector="cancelAction:" destination="WaW-Jy-Fjm" id="Yhz-DQ-hOm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="GF6-Xz-5Hb">
+                            <connections>
+                                <action selector="nextAction:" destination="WaW-Jy-Fjm" id="nNe-X2-UbL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Az-hb-OSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
