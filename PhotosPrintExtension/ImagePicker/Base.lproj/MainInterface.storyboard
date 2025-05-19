@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WaW-Jy-Fjm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,21 +15,30 @@
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="OUe-Zp-qQV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkX-6z-sO9">
+                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="close" destination="WaW-Jy-Fjm" eventType="touchUpInside" id="Woa-8S-HEo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GXn-j2-chh"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SkX-6z-sO9" firstAttribute="centerX" secondItem="OUe-Zp-qQV" secondAttribute="centerX" id="T6u-HC-hhi"/>
+                            <constraint firstItem="SkX-6z-sO9" firstAttribute="centerY" secondItem="OUe-Zp-qQV" secondAttribute="centerY" id="V48-jL-9BG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WyA-cf-tHT">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="asl-1Q-KVB">
-                            <connections>
-                                <action selector="cancelAction:" destination="WaW-Jy-Fjm" id="Yhz-DQ-hOm"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="GF6-Xz-5Hb">
-                            <connections>
-                                <action selector="nextAction:" destination="WaW-Jy-Fjm" id="nNe-X2-UbL"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="asl-1Q-KVB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="GF6-Xz-5Hb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="closeBtn" destination="SkX-6z-sO9" id="Ep5-xN-eVe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Az-hb-OSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,7 @@ class ActionViewController: UIViewController {
     
     var imagesUrls: [String] = []
     
+    @IBOutlet weak var closeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +25,17 @@ class ActionViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func close() {
+        self.dismiss(animated: false, completion: { [self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.redirectToHostApp()
+                self.extensionContext?.completeRequest(returningItems: [])
+            }
+        })
     }
-    
+
     
     func redirectToHostApp() {
-        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         let url = URL(string: "ImagePicker://dataUrl=\(sharedKey)")
         var responder: UIResponder? = self
         while responder != nil {
@@ -58,12 +63,11 @@ class ActionViewController: UIViewController {
                         
                         if index == (content.attachments?.count)! - 1 {
                             DispatchQueue.main.async {
-                                //this.imgCollectionView.reloadData()
                                 let userDefaults = UserDefaults(suiteName: "group.com.photos.testpush")
                                 userDefaults?.set(this.imagesUrls, forKey: this.sharedKey)
                                 userDefaults?.synchronize()
                                 
-                                this.redirectToHostApp()
+                                this.closeBtn.sendActions(for: UIControl.Event.touchUpInside)
                             }
                         }
                         
