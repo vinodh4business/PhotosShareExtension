@@ -20,6 +20,7 @@ class ShareViewController: UIViewController {
     }
     
     func redirectToHostApp() {
+        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         let url = URL(string: "ImagePicker://dataUrl=\(sharedKey)")
         var responder: UIResponder? = self
         while responder != nil {
@@ -28,7 +29,6 @@ class ShareViewController: UIViewController {
             }
             responder = responder?.next
         }
-        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
     }
     
     func manageImages() {
